@@ -1,87 +1,242 @@
-# TaskFlow - あなたのTo-Doリスト
+# TaskFlow - To-Do List App 📝
 
-TaskFlow is a simple and user-friendly To-Do List application built with JavaScript, HTML, and CSS. Easily keep track of your daily tasks, mark them as completed, and manage your productivity with a clean, modern Japanese interface.
+<div align="center">
+  <img src="./public/logo.png" alt="TaskFlow Logo" width="80" height="80" style="border-radius: 50%;">
+  <h3>シンプルで直感的なタスク管理アプリ</h3>
+  <p><em>Simple and intuitive task management application</em></p>
+</div>
 
-## Features
+---
 
-- **Add Tasks:** Quickly add new tasks to your to-do list.
-- **Edit Tasks:** Modify existing tasks as needed.
-- **Delete Tasks:** Remove tasks you no longer need.
-- **Delete All Tasks:** Remove all tasks from your list at once.
-- **Mark as Complete:** Check off tasks when they're done.
-- **Check All / Uncheck All:** Easily mark all tasks as completed or uncompleted in one click.
-- **Responsive Design:** Works great on desktop and mobile devices.
+## 🌟 Features / 機能
 
-## Demo
+### English
 
-![TaskFlow Screenshot](public/logo.png)
+- ✅ **Add, Edit, Delete Tasks** - Complete CRUD operations for task management
+- ✅ **Mark Tasks as Complete** - Check off completed tasks with visual feedback
+- ✅ **Bulk Operations** - Mark all tasks as complete or delete all tasks
+- ✅ **Task Counter** - Real-time display of total and completed tasks
+- ✅ **Responsive Design** - Works perfectly on desktop and mobile devices
+- ✅ **Modern UI** - Beautiful interface with smooth animations
+- ✅ **Local Storage** - Tasks persist between browser sessions
+- ✅ **Japanese Localization** - Full Japanese language support
 
-## Getting Started
+### 日本語
 
-### Prerequisites
+- ✅ **タスクの追加・編集・削除** - タスク管理の完全な CRUD 操作
+- ✅ **タスクの完了マーク** - 視覚的フィードバック付きのタスク完了機能
+- ✅ **一括操作** - 全タスクの完了マークまたは全削除
+- ✅ **タスクカウンター** - 総タスク数と完了タスク数のリアルタイム表示
+- ✅ **レスポンシブデザイン** - デスクトップとモバイルデバイスで完璧に動作
+- ✅ **モダン UI** - スムーズなアニメーション付きの美しいインターフェース
+- ✅ **ローカルストレージ** - ブラウザセッション間でのタスク永続化
+- ✅ **日本語対応** - 完全な日本語言語サポート
 
-- A modern web browser (Chrome, Firefox, Edge, Safari, etc.)
+---
 
-### Installation
+## 🚀 Quick Start / クイックスタート
 
-1. **Clone the repository:**
-    ```bash
-    git clone https://github.com/shinthantnaingGit/To-Do-List-App.git
-    ```
-2. **Navigate to the project directory:**
-    ```bash
-    cd To-Do-List-App
-    ```
-3. **Open `index.html` in your browser:**
-    - Double-click `index.html`, or
-    - Run a local server and navigate to `localhost`
+### Prerequisites / 前提条件
 
-## Usage
+- Node.js (v14 or higher)
+- npm or yarn
 
-1. Enter your task in the input field.
-2. Click the "Add" button to add the task to your list.
-3. To mark a task as completed, click the checkbox next to the task.
-4. To edit or delete a task, use the respective buttons next to each task.
-5. Use the **"Delete All"** button to remove all tasks from your to-do list at once.
-6. Use the **"Check All"** button to mark all tasks as completed.
-7. Use the **"Uncheck All"** button to unmark all tasks as completed.
+### Installation / インストール
 
-## Technologies Used
+```bash
+# Clone the repository
+git clone https://github.com/shinthantnaingGit/TaskFlow-To-Do-List-App.git
 
-- **JavaScript** – Handles the app logic.
-- **HTML** – Provides the structure and layout.
-- **CSS** – Styles the application for a clean user experience.
+# Navigate to the project directory
+cd TaskFlow-To-Do-List-App
 
-## Folder Structure
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+### Build for Production / 本番用ビルド
+
+```bash
+# Build the project
+npm run build
+
+# Preview the production build
+npm run preview
+```
+
+---
+
+## 🛠️ Technology Stack / 技術スタック
+
+### Frontend Technologies
+
+- **HTML5** - Semantic markup structure
+- **CSS3** - Modern styling with custom properties
+- **JavaScript (ES6+)** - Modern JavaScript with modules
+- **Vite** - Fast build tool and development server
+- **Tailwind CSS** - Utility-first CSS framework
+- **Animate.css** - CSS animation library
+- **SweetAlert2** - Beautiful alert dialogs
+
+### Key Features
+
+- **Modular Architecture** - Clean separation of concerns
+- **Local Storage API** - Data persistence
+- **Responsive Design** - Mobile-first approach
+- **Accessibility** - ARIA labels and keyboard navigation
+
+---
+
+## 📱 Screenshots / スクリーンショット
+
+### Desktop View / デスクトップ表示
+
+![TaskFlow Desktop View](./img/desktop-view.png)
+
+### Mobile View / モバイル表示
+
+![TaskFlow Mobile View](./img/mobile-view.png)
+
+---
+
+## 🎯 Usage / 使用方法
+
+### Adding a Task / タスクの追加
+
+1. Type your task in the input field
+2. Click the "タスク追加" (Add Task) button or press Enter
+3. Your task will appear in the list below
+
+### Managing Tasks / タスクの管理
+
+- **Complete a task**: Check the checkbox next to the task
+- **Edit a task**: Click the edit (pencil) icon
+- **Delete a task**: Click the delete (trash) icon
+- **Mark all complete**: Click "すべて完了" (Mark All Complete)
+- **Delete all tasks**: Click "すべて削除" (Delete All)
+
+### Task Counter / タスクカウンター
+
+- **総タスク数** (Total Tasks): Shows the total number of tasks
+- **完了** (Completed): Shows the number of completed tasks
+
+---
+
+## 🏗️ Project Structure / プロジェクト構造
 
 ```
-To-Do-List-App/
-├── src/
-│   ├── handlers.js
-│   ├── initialRender.js
-│   ├── list.js
-│   ├── listeners.js
-│   ├── obserber.js
-│   ├── selectors.js
-│   └── Todo.js
+TaskFlow-To-Do-List-App/
 ├── public/
-│   ├── logo.png
-│   └── vite.svg
-├── style.css
-├── index.html
-├── package.json
-├── README.md
-└── (other files...)
+│   ├── logo.png          # App logo
+│   └── vite.svg          # Vite logo
+├── src/
+│   ├── Todo.js           # Main Todo class
+│   ├── handlers.js       # Event handlers
+│   ├── initialRender.js  # Initial rendering logic
+│   ├── list.js           # List management
+│   ├── listeners.js      # Event listeners
+│   ├── observer.js       # Observer pattern
+│   └── selectors.js      # DOM selectors
+├── img/
+│   └── empty.svg         # Empty state illustration
+├── index.html            # Main HTML file
+├── main.js              # Application entry point
+├── style.css            # Main stylesheet
+├── package.json         # Dependencies and scripts
+└── vite.config.js       # Vite configuration
 ```
 
-## Contributing
+---
 
-Contributions are welcome! Please open an issue or submit a pull request.
+## 🔧 Development / 開発
 
-## License
+### Available Scripts / 利用可能なスクリプト
 
-This project is open source and available under the [MIT License](LICENSE).
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run preview  # Preview production build
+```
 
-## Author
+### Development Server / 開発サーバー
 
-[shinthantnaingGit](https://github.com/shinthantnaingGit)
+The app runs on `http://localhost:5173` by default.
+
+---
+
+## 🌐 Browser Support / ブラウザサポート
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+---
+
+## 📦 Dependencies / 依存関係
+
+### Production Dependencies
+
+- **@tailwindcss/vite**: Tailwind CSS Vite plugin
+- **animate.css**: CSS animation library
+- **serve**: Static file server
+- **sweetalert2**: Beautiful alert dialogs
+- **tailwindcss**: Utility-first CSS framework
+- **uuid**: UUID generation library
+
+### Development Dependencies
+
+- **vite**: Build tool and development server
+
+---
+
+## 🤝 Contributing / 貢献
+
+We welcome contributions! Please feel free to submit a Pull Request.
+
+### How to Contribute / 貢献方法
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License / ライセンス
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👨‍💻 Author / 作者
+
+**Shin Thant Naing**
+
+- GitHub: [@shinthantnaingGit](https://github.com/shinthantnaingGit)
+
+---
+
+## 🙏 Acknowledgments / 謝辞
+
+- **Tailwind CSS** for the amazing utility-first CSS framework
+- **Vite** for the lightning-fast build tool
+- **SweetAlert2** for beautiful alert dialogs
+- **Animate.css** for smooth animations
+
+---
+
+## 📞 Support / サポート
+
+If you have any questions or need help, please feel free to open an issue on GitHub.
+
+---
+
+<div align="center">
+  <p>Made with ❤️ by <a href="https://github.com/shinthantnaingGit">Shin Thant Naing</a></p>
+  <p>⭐ Star this repository if you found it helpful!</p>
+</div>

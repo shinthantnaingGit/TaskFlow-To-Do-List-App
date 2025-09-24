@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./public/logo.png" />
+    <!-- Primary Meta Tags -->
+    <title>TaskFlow - あなたのTo-Doリスト</title>
+    <meta name="title" content="TaskFlow - あなたのTo-Doリスト" />
+    <meta name="description" content="TaskFlow - シンプルで直感的なタスク管理アプリ。タスクを整理し、進捗を追跡し、生産性を向上させましょう。" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="TaskFlow - あなたのTo-Doリスト" />
+    <meta
+      property="og:description"
+      content="TaskFlow - シンプルで直感的なタスク管理アプリ。タスクを整理し、進捗を追跡し、生産性を向上させましょう。"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://to-do-list-app-deployment.vercel.app/"
+    />
+    <meta property="og:image" content="./public/logo.png" />
+    <meta property="og:site_name" content="TaskFlow" />
+    <meta property="og:locale" content="ja_JP" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://to-do-list-app-deployment.vercel.app/"
+    />
+    <meta property="twitter:title" content="TaskFlow - あなたのTo-Doリスト" />
+    <meta property="twitter:description" content="TaskFlow - シンプルで直感的なタスク管理アプリ。タスクを整理し、進捗を追跡し、生産性を向上させましょう。" />
+    <meta property="twitter:image" content="./public/logo.png" />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
+  </head>
+
+  <body class="bg-gray-400">
+    <!-- Main Container -->
+    <div
+      class="main-container shadow-2xl animate__animated animate__zoomIn min-w-sm"
+    >
+      <!-- Stable decorative elements -->
+      <div class="decorative-element decorative-element-1"></div>
+      <div class="decorative-element decorative-element-2"></div>
+      <div class="decorative-element decorative-element-3"></div>
+
+      <!-- Logo and Title Section -->
+      <div class="title-section">
+        <img 
+          src="./public/logo.png" 
+          alt="TaskFlow Logo" 
+          class="logo w-12 h-12 mr-4 rounded-full shadow-lg"
+        />
+        <h1 class="app-title font-sans">
+          TaskFlow
+        </h1>
+      </div>
+      <h2 class="app-subtitle">
+        あなたのTo-Doリスト
+      </h2>
+
+      <!-- Input Section -->
+      <div class="flex gap-3 mb-6 relative z-10">
+        <input
+          type="text"
+          id="taskInput"
+          class="flex-grow w-[70%] p-3 border-2 border-purple-300 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-200 transition-all duration-200 text-lg placeholder-gray-400 border-gray-500 text-primary-light placeholder-gray-300 focus:ring-purple-400"
+          placeholder="新しいタスクを追加..."
+        />
+        <button
+          id="addBtn"
+          class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center shadow-lg transform transition-all duration-200 hover:scale-105 active:scale-95 active:opacity-80 bg-purple-700 hover:bg-purple-800 w-[30%]"
+        >
+          <!-- Upgraded Add Task Icon (Plus Circle) -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mr-2"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>タスク追加</span>
+        </button>
+      </div>
+
+      <!-- Task Summary -->
+      <div class="summary-section">
+        <p class="text-lg font-semibold">
+          総タスク数: <span id="taskTotal" class="font-bold text-2xl">0</span>
+        </p>
+        <p class="text-lg font-semibold">
+          完了: <span id="doneTotal" class="font-bold text-2xl">0</span>
+        </p>
+      </div>
+
+      <!-- List Group -->
+      <ul
+        id="listGroup"
+        class="space-y-4 max-h-80 overflow-y-auto pr-2 pb-2 relative z-10"
+      >
+        <!-- To-do items will be dynamically added here by JavaScript -->
+      </ul>
+
+      <!-- Action Buttons -->
+      <div class="flex justify-between gap-2 action-buttons-divider">
+        <button
+          id="deleteAll"
+          class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-5 rounded-xl shadow-lg transition-all duration-200 hover:scale-105 active:scale-95 active:opacity-80 opacity-50 bg-red-600 hover:bg-red-700 w-[50%] flex justify-center items-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 inline-block mr-1"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm6 0a1 1 0 11-2 0v6a1 1 0 112 0V8z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>すべて削除</span>
+        </button>
+        <button
+          id="doneAll"
+          class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-5 rounded-xl shadow-lg transition-all duration-200 hover:scale-105 active:scale-95 opacity-50 active:opacity-80 bg-green-600 hover:bg-green-700 w-[50%] flex justify-center items-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 inline-block mr-1"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>すべて完了</span>
+        </button>
+        <button
+          id="unDoneAll"
+          class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-5 rounded-xl shadow-lg transition-all duration-200 hover:scale-105 active:scale-95 active:opacity-80 hidden bg-yellow-600 hover:bg-yellow-700 w-[50%] flex justify-center items-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 inline-block mr-1"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>すべて未完了</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Empty State Template (Hidden - Shown when no tasks) -->
+    <template id="emptyStateTemplate">
+      <div class="empty-state">
+        <svg
+          class="empty-state-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+          />
+        </svg>
+        <h3 class="empty-state-title">タスクがありません</h3>
+        <p class="empty-state-description">
+          上の入力欄から最初のタスクを追加してください！
+        </p>
+      </div>
+    </template>
+
+    <!-- List Item Template (Hidden - Cloned by JavaScript) -->
+    <template id="listTemplate">
+      <li
+        class="list flex items-center p-4 rounded-xl shadow-sm hover:shadow-md"
+      >
+        <input
+          type="checkbox"
+          class="check-list mr-4 h-6 w-6 text-purple-600 rounded-full focus:ring-purple-500 border-gray-300 transform scale-125 cursor-pointer text-purple-400 border-gray-500 checked:bg-purple-400 focus:ring-purple-400"
+        />
+        <p class="list-task text-lg font-semibold flex-grow mr-4"></p>
+        <div class="flex space-x-2">
+          <button
+            class="edit-btn text-blue-500 hover:text-blue-700 transition-colors duration-200 active:scale-95 active:opacity-80 text-blue-400 hover:text-blue-500"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 pointer-events-none"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+              />
+            </svg>
+          </button>
+          <button
+            class="delete-btn text-red-500 hover:text-red-700 transition-colors duration-200 active:scale-95 active:opacity-80 text-red-400 hover:text-red-500"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 pointer-events-none"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </li>
+    </template>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

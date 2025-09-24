@@ -90,18 +90,6 @@ npm run preview
 
 ---
 
-## 📱 Screenshots / スクリーンショット
-
-### Desktop View / デスクトップ表示
-
-![TaskFlow Desktop View](./img/desktop-view.png)
-
-### Mobile View / モバイル表示
-
-![TaskFlow Mobile View](./img/mobile-view.png)
-
----
-
 ## 🎯 Usage / 使用方法
 
 ### Adding a Task / タスクの追加
